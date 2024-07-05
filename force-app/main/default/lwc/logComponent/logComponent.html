@@ -1,0 +1,28 @@
+<!--
+  @description       : 
+  @author            : Manas Kumar Behera
+  @group             : 
+  @last modified on  : 07-05-2024
+  @last modified by  : Manas Kumar Behera
+-->
+
+<template>
+    <lightning-card title="Log Component">
+        <div class="slds-var-m-around_medium">
+            <template if:true={logs.length}>
+                <ul class="slds-list_dotted">
+                    <template for:each={logs} for:item="log">
+                        <li key={log.id}>{log.message} - {log.timestamp}</li>
+                    </template>
+                </ul>
+            </template>
+            <template if:false={logs.length}>
+                <p>No logs available.</p>
+            </template>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <lightning-textarea label="New Log Entry" value={newLog} onchange={handleLogChange}></lightning-textarea>
+            <lightning-button label="Add Log" onclick={addLog} class="slds-var-m-top_small"></lightning-button>
+        </div>
+    </lightning-card>
+</template>

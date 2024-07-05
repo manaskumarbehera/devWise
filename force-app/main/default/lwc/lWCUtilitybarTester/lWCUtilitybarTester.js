@@ -3,6 +3,8 @@ import { EnclosingUtilityId, minimize } from 'lightning/platformUtilityBarApi';
 import { NavigationMixin } from 'lightning/navigation';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { gql, graphql } from "lightning/uiGraphQLApi";
+import { log } from 'lightning/logger';
+
 
 export default class LWCUtilitybarTester extends LightningElement {
     results;
